@@ -1,0 +1,23 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+work/
+data/osm/*.xml
+data/osm/*.json
+*.log
+frontend/public/maplibre/
+.neon
+
+# Expo generated artifacts
+mobile/.expo/
+mobile/dist/
+mobile/android/
+mobile/ios/
+*.apk
+*.aab

@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "SafePath",
+    "slug": "safepath-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "in.safepath.mobile"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#101216"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "in.safepath.mobile"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "safepath",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow SafePath to show your current position and use it as your starting point."
+        }
+      ],
+      "@maplibre/maplibre-react-native"
+    ],
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "d659c522-2e55-4621-ac56-2e97d6a73661"
+      }
+    },
+    "owner": "nikitha776"
+  }
+}

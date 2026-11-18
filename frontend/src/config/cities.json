@@ -1,0 +1,63 @@
+{
+  "activeCity": "bengaluru",
+  "cities": {
+    "vijayawada": {
+      "name": "Vijayawada",
+      "center": [
+        80.6196802,
+        16.5204153
+      ],
+      "bounds": [
+        80.5,
+        16.4,
+        80.85,
+        16.65
+      ],
+      "evidenceBounds": [
+        80.609,
+        16.507,
+        80.623,
+        16.523
+      ],
+      "origin": {
+        "label": "Vijayawada Junction Railway Station",
+        "lat": 16.5204153,
+        "lon": 80.6196802
+      },
+      "destination": {
+        "label": "Rajiv Gandhi Park",
+        "lat": 16.5091443,
+        "lon": 80.6122988
+      }
+    },
+    "bengaluru": {
+      "name": "Bengaluru",
+      "center": [
+        77.6386519,
+        12.9782941
+      ],
+      "bounds": [
+        77.3,
+        12.8,
+        77.9,
+        13.2
+      ],
+      "evidenceBounds": [
+        77.636,
+        12.976,
+        77.64,
+        12.98
+      ],
+      "origin": {
+        "label": "Indiranagar Metro Station",
+        "lat": 12.9782941,
+        "lon": 77.6386519
+      },
+      "destination": {
+        "label": "Chinmaya Mission Hospital",
+        "lat": 12.9779063,
+        "lon": 77.6461909
+      }
+    }
+  }
+}

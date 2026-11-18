@@ -1,0 +1,12 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),ts=require('typescript');
+const compiled=ts.transpileModule(fs.readFileSync(require('node:path').join(__dirname,'../src/lib/assessment-comparison.ts'),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
+const exportsObject={};vm.runInNewContext(compiled,{exports:exportsObject});const compare=exportsObject.compareAssessments;
+const candidate=(score,duration=900,rankable=true)=>({assessment:{rankable,concern_score:score},duration});
+assert.match(compare([candidate(0,900,false),candidate(20)]).title,/Insufficient/);
+assert.match(compare([candidate(0),candidate(5)]).title,/No meaningful difference/);
+assert.match(compare([candidate(0,1600),candidate(20,900)]).title,/trade-off/);
+assert.match(compare([candidate(0,1000),candidate(20,900)]).title,/Route 1/);
+assert.match(compare([candidate(null),candidate(20)]).title,/Insufficient/);
+assert.match(compare([candidate(0,NaN),candidate(20)]).title,/Insufficient/);
+assert.match(compare([candidate(0)]).title,/One candidate/);
+console.log('7 comparison checks passed: sparse evidence, small differences, travel-time tradeoffs, missing scores and valid preference.');
